@@ -35,7 +35,7 @@ public class ConexionDB {
         }
     }
 
-    public ArrayList obtenerActor(){
+    public ArrayList obtenerActor(String campo){
       ArrayList<Short> actor_id = new ArrayList<Short>();
       ArrayList<String> first_name = new ArrayList<String>();
       ArrayList<String> last_name = new ArrayList<String>();
@@ -64,16 +64,30 @@ public class ConexionDB {
         catch (SQLException e){
             System.out.println(e.getMessage());
 
-        } finally {
-                cerrarConexion();
         }
-        return first_name;
+        switch (campo){
+            case "actor_id":
+                return actor_id;
+            case "first_name":
+                return first_name;
+            case "last_name":
+                return last_name;
+            case "last_update":
+                return last_update;
+            default:
+                return null;
+        }
+
     }
-
-
-
-
-
-
+    public ArrayList obtenerDireccion(String campo){
+        ArrayList<Short> address_id = new ArrayList<Short>();
+        ArrayList<String> address = new ArrayList<String>();
+        ArrayList<String> district = new ArrayList<String>();
+        ArrayList<Integer> city_id = new ArrayList<Integer>();
+        ArrayList<Integer> postal_code = new ArrayList<Integer>();
+        ArrayList<Integer> phone = new ArrayList<Integer>();
+        ArrayList<Byte> location = new ArrayList<Byte>();
+        ArrayList<Timestamp> last_update = new ArrayList<Timestamp>();
+    }
 
 }
