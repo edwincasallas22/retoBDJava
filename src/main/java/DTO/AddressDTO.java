@@ -1,5 +1,6 @@
 package DTO;
 
+import java.math.BigInteger;
 import java.sql.Timestamp;
 import java.util.ArrayList;
 
@@ -9,8 +10,7 @@ public class AddressDTO {
     private ArrayList<String> districtDTO = new ArrayList<String>();
     private ArrayList<Integer> city_idDTO = new ArrayList<Integer>();
     private ArrayList<Integer> postal_codeDTO = new ArrayList<Integer>();
-    private ArrayList<Integer> phoneDTO = new ArrayList<Integer>();
-    private ArrayList<Byte> locationDTO = new ArrayList<Byte>();
+    private ArrayList<Long> phoneDTO = new ArrayList<Long>();
     private ArrayList<Timestamp> last_updateDTO = new ArrayList<Timestamp>();
 
     public AddressDTO(){}
@@ -55,20 +55,12 @@ public class AddressDTO {
         this.postal_codeDTO = postal_codeDTO;
     }
 
-    public ArrayList<Integer> getPhoneDTO() {
+    public ArrayList<Long> getPhoneDTO() {
         return phoneDTO;
     }
 
-    public void setPhoneDTO(ArrayList<Integer> phoneDTO) {
+    public void setPhoneDTO(ArrayList<Long> phoneDTO) {
         this.phoneDTO = phoneDTO;
-    }
-
-    public ArrayList<Byte> getLocationDTO() {
-        return locationDTO;
-    }
-
-    public void setLocationDTO(ArrayList<Byte> locationDTO) {
-        this.locationDTO = locationDTO;
     }
 
     public ArrayList<Timestamp> getLast_updateDTO() {
